@@ -1,0 +1,66 @@
+    {% extends "layout.html" %}
+
+    {% block title %}
+        BMI
+    {% endblock %}
+
+    {% block main %}
+        <style>
+            body {
+            background: url('/static/bmi_background.jpg') no-repeat center center fixed;
+        }
+        </style>
+        <link rel="stylesheet" href="styles.css">
+
+        <!-- Flash Message for Server-Side Errors -->
+        {% if error %}
+            <div class="alert alert-danger text-center" role="alert">
+                {{ error }}
+            </div>
+        {% endif %}
+
+        <form action="/bmi" method="post" onsubmit="return validateForm()">
+            <div class="mb-3">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="height" placeholder="Height in cm" type="number" id="height" step="0.01">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="weight" placeholder="Weight in kg" type="number" id="weight" step="0.01">
+            </div>
+            <div class="mb-3">
+                <input class="form-control mx-auto w-auto" name="age" placeholder="Age" type="number" id="age" step="0.01">
+            </div>
+            <button class="btn btn-primary" type="submit">Calculate BMI</button>
+        </form>
+
+        <!-- Client-Side Error Message -->
+        <div id="error-message" class="alert alert-danger mt-3 text-center" style="display: none;"></div>
+
+        <script>
+            function validateForm() {
+                // Clear any previous error messages
+                document.getElementById("error-message").style.display = "none";
+
+                // Get the values of the height and weight fields
+                var height = parseFloat(document.getElementById("height").value);
+                var weight = parseFloat(document.getElementById("weight").value);
+                var age = parseFloat(document.getElementById("age").value);
+
+                // Check if either field is empty
+                if (!height || !weight || !age) {
+                    document.getElementById("error-message").innerHTML = "Height, weight and age must be provided.";
+                    document.getElementById("error-message").style.display = "block";
+                    return false;  // Prevent form submission
+                }
+
+                // Check if either field is negative
+                if (height <= 0 || weight <= 0 || age <= 0) {
+                    document.getElementById("error-message").innerHTML = "Height, weight and age must be positive numbers.";
+                    document.getElementById("error-message").style.display = "block";
+                    return false;  // Prevent form submission
+                }
+
+                // If fields are valid, allow form submission
+                return true;
+            }
+        </script>
+    {% endblock %}

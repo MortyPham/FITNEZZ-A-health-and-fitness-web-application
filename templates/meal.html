@@ -1,0 +1,104 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meal Planner
+{% endblock %}
+
+{% block main %}
+    <style>
+        body {
+            background: url('/static/meal_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .bmi-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start; /* Align content to the top inside the container */
+            align-items: flex-start; /* Align content to the left inside the container */
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.75);
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            width: 90%; /* Adjust container width */
+            max-width: 600px; /* Limit the maximum width */
+            margin: 2rem auto; /* Center the container horizontally */
+            text-align: left; /* Ensure text is aligned to the left */
+        }
+
+        .bmi-container ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .bmi-container li {
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+
+        .bmi-container li strong {
+            color: #f8f9fa;
+        }
+
+        .bmi-container ul ul {
+            margin-left: 1.5rem;
+        }
+
+        .bmi-container ul li::before {
+            content: "•";
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+
+        .bmi-container ul ul li::before {
+            content: "–";
+            color: #6c757d;
+            font-size: 1rem;
+        }
+    </style>
+
+    <div class="bmi-container">
+        <p>Your recommended calorie intake is: {{ calorie_intake }}</p>
+    </div>
+
+    <div class="bmi-container">
+        <ul>
+            <li><strong>Vegetables:</strong>
+                <ul>
+                    <li>Aim to fill about half your plate with veggies.</li>
+                    <li>Include cruciferous vegetables like broccoli and leafy greens.</li>
+                    <li>Add colorful options such as peppers.</li>
+                </ul>
+            </li>
+            <li><strong>Fruits:</strong>
+                <ul>
+                    <li>Choose fresh fruit whenever possible.</li>
+                    <li>Include a variety of colors like berries, grapes, apples, and grapefruits.</li>
+                </ul>
+            </li>
+            <li><strong>Whole grains:</strong>
+                <ul>
+                    <li>Opt for grains in their whole form for more fiber and nutrients.</li>
+                    <li>Examples: brown rice, oats, and 100% whole grain bread.</li>
+                </ul>
+            </li>
+            <li><strong>Lean protein:</strong>
+                <ul>
+                    <li>Focus on high-protein, low-fat options.</li>
+                    <li>Examples: grilled chicken, ground turkey, and white fish.</li>
+                </ul>
+            </li>
+            <li><strong>Healthy fats:</strong>
+                <ul>
+                    <li>Include fatty fish such as salmon and tuna for omega-3 fatty acids.</li>
+                    <li>Nuts like walnuts and avocados are excellent sources of healthy unsaturated fats.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BMI
+{% endblock %}
+
+{% block main %}
+    <style>
+        body {
+            background: url('/static/bmi_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        .bmi-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 200px; /* Adjusted height */
+            padding: 1rem 2rem; /* Padding for content inside */
+            background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
+            border-radius: 15px; /* Rounded corners for aesthetics */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+            width: 80%; /* Width relative to the viewport */
+            max-width: 500px; /* Maximum width for responsiveness */
+            margin: 10% auto; /* Center horizontally and add vertical spacing */
+        }
+
+        .bmi-container p {
+            font-size: 1.5rem; /* Slightly smaller font size */
+            margin: 0.5rem 0; /* Consistent spacing between paragraphs */
+            color: #f8f9fa; /* Light gray for text contrast */
+        }
+    </style>
+
+    <div class="bmi-container">
+        <p>Your BMI is: <strong>{{ BMI }}</strong></p>
+        <p><strong>You are {{ status }}</strong></p>
+    </div>
+
+    <form action="/bmi" method="post" onsubmit="return validateForm()">
+        <button class="btn btn-primary" type="submit">Re-enter weight and height</button>
+    </form>
+{% endblock %}

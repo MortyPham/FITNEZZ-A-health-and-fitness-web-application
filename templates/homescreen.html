@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    BMI
+{% endblock %}
+
+{% block main %}
+    <style>
+        body {
+            background: url('/static/homescreen_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+    </style>
+
+    <div class="bmi-container">
+        <p>Your age is: {{ age }}</p>
+        <p>Your height is: {{ height }} cm</p>
+        <p>Your weight is {{ weight }} kg</p>
+        <p>Your BMI is: {{ BMI }}</p>
+        <p>You are {{ status }}</p>
+    </div>
+
+
+{% endblock %}

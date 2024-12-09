@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Introduction
+{% endblock %}
+
+{% block main %}
+<style>
+    /* Introduction Page Styling */
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@700&display=swap');
+
+    body {
+        background: url('/static/intro_background.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
+
+<div class="intro-content">
+    <div class="intro-box">
+        <h1>FITNEZZ</h1>
+        <p>
+            Change your fitness, change your life.
+        </p>
+    </div>
+</div>
+{% endblock %}

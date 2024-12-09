@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Flash Message for Server-Side Errors -->
+    {% if error %}
+        <div class="alert alert-danger text-center" role="alert">
+            {{ error }}
+        </div>
+    {% endif %}
+
+    <form action="/login" method="post" onsubmit="return validateForm()">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text" id="username">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password" id="password">
+        </div>
+        <button class="btn btn-primary" type="submit">Log In</button>
+    </form>
+
+    <!-- Client-Side Error Message -->
+    <div id="error-message" class="alert alert-danger mt-3 text-center" style="display: none;"></div>
+
+    <script>
+        function validateForm() {
+            // Clear any previous error messages
+            document.getElementById("error-message").style.display = "none";
+
+            // Get the values of the username and password fields
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if either field is empty
+            if (!username || !password) {
+                document.getElementById("error-message").innerHTML = "Both username and password must be provided.";
+                document.getElementById("error-message").style.display = "block";
+                return false;  // Prevent form submission
+            }
+
+            // If fields are filled, allow form submission
+            return true;
+        }
+    </script>
+{% endblock %}

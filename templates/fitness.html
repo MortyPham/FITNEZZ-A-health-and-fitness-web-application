@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Meal Planner
+{% endblock %}
+
+{% block main %}
+    <style>
+        body {
+            background: url('/static/fitness_background.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+
+    <div class="bmi-container">
+        <p>Your recommended exercise plan is: 3 days of strength training and minimum of 3 days of cardio</p>
+    </div>
+
+    <div class="bmi-container">
+        <ul>
+            <li><strong>Set Realistic Goals:</strong> Break your goals into smaller, achievable stages to stay motivated.</li>
+            <li><strong>Be Consistent:</strong> Regular exercise is key to seeing results.</li>
+            <li><strong>Start Slowly:</strong> Increase the amount you exercise by no more than 10% per week.</li>
+            <li><strong>Accept Discomfort:</strong> It's normal to feel some discomfort, like shortness of breath, sweating, or aching muscles, when you first start exercising.</li>
+            <li><strong>Stay Hydrated:</strong> Drink plenty of water before, during, and after exercise, especially in hot weather or during prolonged workouts.</li>
+            <li><strong>Warm Up:</strong> Warming up helps prepare your body for exercise and reduces the risk of injury.</li>
+            <li><strong>Track Your Progress:</strong> Keep a log of your progress in a journal or fitness app to stay accountable.</li>
+            <li><strong>Alternate Activities:</strong> Try new exercises to keep your routine fresh and challenging.</li>
+            <li><strong>Consider Strength Training:</strong> Strength training can improve bone health and increase overall strength.</li>
+            <li><strong>Exercise in the Morning:</strong> Morning exercise can help you sleep better and maintain consistency.</li>
+        </ul>
+    </div>
+{% endblock %}

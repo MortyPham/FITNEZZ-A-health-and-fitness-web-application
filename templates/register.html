@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Flash Message for Server-Side Errors -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="alert alert-danger text-center" role="alert">
+                {% for category, message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form action="/register" method="post" onsubmit="return validateForm()">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text" id="username">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="password" placeholder="Password" type="password" id="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" name="confirmation" placeholder="Confirm Password" type="password" id="confirmation">
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <!-- Client-Side Error Message -->
+    <div id="error-message" class="alert alert-danger mt-3 text-center" style="display: none;"></div>
+
+    <script>
+        function validateForm() {
+            // Clear any previous error messages
+            document.getElementById("error-message").style.display = "none";
+
+            // Get the values of the username, password, and confirmation fields
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var confirmation = document.getElementById("confirmation").value;
+
+            // Check if any field is empty
+            if (!username || !password || !confirmation) {
+                document.getElementById("error-message").innerHTML = "All fields must be filled out.";
+                document.getElementById("error-message").style.display = "block";
+                return false;  // Prevent form submission
+            }
+
+            // Check if passwords match
+            if (password !== confirmation) {
+                document.getElementById("error-message").innerHTML = "Passwords do not match.";
+                document.getElementById("error-message").style.display = "block";
+                return false;  // Prevent form submission
+            }
+
+            
+        }
+    </script>
+{% endblock %}
