@@ -1,0 +1,109 @@
+body {
+    background-size: cover;
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.bmi-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top inside the container */
+    align-items: flex-start; /* Align content to the left inside the container */
+    padding: 1.5rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+    width: 90%; /* Adjust container width */
+    max-width: 600px; /* Limit the maximum width */
+    margin: 2rem auto; /* Center the container horizontally */
+    text-align: left; /* Ensure text is aligned to the left */
+}
+
+.bmi-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bmi-container li {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+}
+
+.bmi-container li strong {
+    color: #f8f9fa;
+}
+
+.bmi-container ul ul {
+    margin-left: 1.5rem;
+}
+
+.bmi-container ul li::before {
+    content: "•";
+    color: #ffc107;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+.bmi-container ul ul li::before {
+    content: "–";
+    color: #6c757d;
+    font-size: 1rem;
+}
+
+.bmi-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px; /* Adjusted height */
+    padding: 1rem 2rem; /* Padding for content inside */
+    background-color: rgba(0, 0, 0, 0.8); /* Darker semi-transparent background */
+    border-radius: 15px; /* Rounded corners for aesthetics */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+    width: 80%; /* Width relative to the viewport */
+    max-width: 500px; /* Maximum width for responsiveness */
+    margin: 10% auto; /* Center horizontally and add vertical spacing */
+}
+
+.bmi-container p {
+    font-size: 1.5rem; /* Slightly smaller font size */
+    margin: 0.5rem 0; /* Consistent spacing between paragraphs */
+    color: #f8f9fa; /* Light gray for text contrast */
+}
+
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; /* Center the content vertically */
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.intro-box {
+    background: rgba(0, 0, 0, 0.8); /* Black with opacity for transparency */
+    padding: 2rem;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    max-width: 700px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Optional shadow for depth */
+}
+
+/* Title Styling */
+.intro-box h1 {
+    font-family: 'Lobster', cursive; /* Fancy font for the title */
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: bold; /* Bold text */
+}
+
+/* Description Styling */
+.intro-box p {
+    font-family: 'Roboto', sans-serif; /* Clean font for the description */
+    font-size: 1.5rem;
+    line-height: 1.8;
+    font-weight: bold; /* Bold text */
+}
