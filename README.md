@@ -1,4 +1,4 @@
-# FITNEZZ: A health and fitness Web application
+# Hypertropy: A health and fitness Web application
 ### Video Demo:  https://youtu.be/wZ8N6YYVk2c
 ### Description:
 This is my final project for CS50X: Introduction to Computer Science. My web app enables users to get customized health advice and evaluation, meal planning tips and exercise tips.
